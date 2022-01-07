@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RepositoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
