@@ -7,27 +7,16 @@
 
 import Foundation
 
-enum RequestType {
-    case data
-    case download
-}
-
 class NetworkManager {
-    func request(withUrl url: URL, type : RequestType, completion: @escaping (Result<Any,Error>) -> Void) {
+    func request(withUrl url: URL, completion: @escaping (Result<Any,Error>) -> Void) {
         let session = URLSession.shared
-        switch type {
-        case .data:
-            session.dataTask(with: url) { data, response, error in
-                NetworkResponseHandler.shared.handleDataTaskResponse(data: data, urlResponse: response, error: error) { result in
-                    completion(result)
-                }
-            }
-        case .download:
-            session.downloadTask(with: url) { url, response, error in
-                NetworkResponseHandler.shared.handleDownloadTaskResponse(fileUrl: url, urlResponse: response, error: error) { result in
+        let task = session.dataTask(with: url) { data, response, error in
+            NetworkResponseHandler.shared.handleDataTaskResponse(data: data, urlResponse: response, error: error) { result in
+                DispatchQueue.main.async {
                     completion(result)
                 }
             }
         }
+        task.resume()
     }
 }

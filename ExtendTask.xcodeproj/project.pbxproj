@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04C24387278BA88E00DD296A /* RepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C24386278BA88E00DD296A /* RepositoriesResponse.swift */; };
+		04C24387278BA88E00DD296A /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C24386278BA88E00DD296A /* Repository.swift */; };
 		04C2438A278BAAD200DD296A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C24389278BAAD200DD296A /* NetworkManager.swift */; };
 		04C2438C278C479E00DD296A /* NetworkResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2438B278C479E00DD296A /* NetworkResponseHandler.swift */; };
-		04C2438F278C6A5E00DD296A /* ReositoriesResponseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2438E278C6A5E00DD296A /* ReositoriesResponseViewModel.swift */; };
+		04C2438F278C6A5E00DD296A /* ReositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C2438E278C6A5E00DD296A /* ReositoryViewModel.swift */; };
 		04C24391278C6BC100DD296A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C24390278C6BC100DD296A /* Constants.swift */; };
+		04C24396278C7B9500DD296A /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C24394278C7B9500DD296A /* RepositoryTableViewCell.swift */; };
+		04C24397278C7B9500DD296A /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C24395278C7B9500DD296A /* RepositoryTableViewCell.xib */; };
 		04F4DFC8278784BD0059AF1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFC7278784BD0059AF1B /* AppDelegate.swift */; };
 		04F4DFCA278784BD0059AF1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFC9278784BD0059AF1B /* SceneDelegate.swift */; };
 		04F4DFCC278784BD0059AF1B /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFCB278784BD0059AF1B /* RepositoriesViewController.swift */; };
@@ -21,7 +23,6 @@
 		04F4DFDF278784C10059AF1B /* ExtendTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFDE278784C10059AF1B /* ExtendTaskTests.swift */; };
 		04F4DFEA278784C10059AF1B /* ExtendTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFE9278784C10059AF1B /* ExtendTaskUITests.swift */; };
 		04F4DFFD2787C3DB0059AF1B /* RepositoryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFFC2787C3DB0059AF1B /* RepositoryDetailsViewController.swift */; };
-		04F4E000278A64B40059AF1B /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4DFFF278A64B40059AF1B /* Repository.swift */; };
 		04F4E002278A65610059AF1B /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F4E001278A65610059AF1B /* Owner.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04C24386278BA88E00DD296A /* RepositoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesResponse.swift; sourceTree = "<group>"; };
+		04C24386278BA88E00DD296A /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		04C24389278BAAD200DD296A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		04C2438B278C479E00DD296A /* NetworkResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseHandler.swift; sourceTree = "<group>"; };
-		04C2438E278C6A5E00DD296A /* ReositoriesResponseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReositoriesResponseViewModel.swift; sourceTree = "<group>"; };
+		04C2438E278C6A5E00DD296A /* ReositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReositoryViewModel.swift; sourceTree = "<group>"; };
 		04C24390278C6BC100DD296A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04C24394278C7B9500DD296A /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		04C24395278C7B9500DD296A /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		04F4DFC4278784BC0059AF1B /* ExtendTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtendTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F4DFC7278784BD0059AF1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F4DFC9278784BD0059AF1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,7 +66,6 @@
 		04F4DFE9278784C10059AF1B /* ExtendTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendTaskUITests.swift; sourceTree = "<group>"; };
 		04F4DFEB278784C20059AF1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F4DFFC2787C3DB0059AF1B /* RepositoryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailsViewController.swift; sourceTree = "<group>"; };
-		04F4DFFF278A64B40059AF1B /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		04F4E001278A65610059AF1B /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +107,7 @@
 		04C2438D278C685A00DD296A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				04C2438E278C6A5E00DD296A /* ReositoriesResponseViewModel.swift */,
+				04C2438E278C6A5E00DD296A /* ReositoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,6 +204,8 @@
 		04F4DFFB2787C3800059AF1B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				04C24394278C7B9500DD296A /* RepositoryTableViewCell.swift */,
+				04C24395278C7B9500DD296A /* RepositoryTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -209,8 +213,7 @@
 		04F4DFFE278A648B0059AF1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04C24386278BA88E00DD296A /* RepositoriesResponse.swift */,
-				04F4DFFF278A64B40059AF1B /* Repository.swift */,
+				04C24386278BA88E00DD296A /* Repository.swift */,
 				04F4E001278A65610059AF1B /* Owner.swift */,
 			);
 			path = Models;
@@ -322,6 +325,7 @@
 				04F4DFD4278784C00059AF1B /* LaunchScreen.storyboard in Resources */,
 				04F4DFD1278784C00059AF1B /* Assets.xcassets in Resources */,
 				04F4DFCF278784BD0059AF1B /* Main.storyboard in Resources */,
+				04C24397278C7B9500DD296A /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,12 +353,12 @@
 				04F4DFFD2787C3DB0059AF1B /* RepositoryDetailsViewController.swift in Sources */,
 				04C24391278C6BC100DD296A /* Constants.swift in Sources */,
 				04F4E002278A65610059AF1B /* Owner.swift in Sources */,
-				04C2438F278C6A5E00DD296A /* ReositoriesResponseViewModel.swift in Sources */,
+				04C24396278C7B9500DD296A /* RepositoryTableViewCell.swift in Sources */,
+				04C2438F278C6A5E00DD296A /* ReositoryViewModel.swift in Sources */,
 				04F4DFCC278784BD0059AF1B /* RepositoriesViewController.swift in Sources */,
 				04C2438C278C479E00DD296A /* NetworkResponseHandler.swift in Sources */,
-				04F4E000278A64B40059AF1B /* Repository.swift in Sources */,
 				04C2438A278BAAD200DD296A /* NetworkManager.swift in Sources */,
-				04C24387278BA88E00DD296A /* RepositoriesResponse.swift in Sources */,
+				04C24387278BA88E00DD296A /* Repository.swift in Sources */,
 				04F4DFC8278784BD0059AF1B /* AppDelegate.swift in Sources */,
 				04F4DFCA278784BD0059AF1B /* SceneDelegate.swift in Sources */,
 			);

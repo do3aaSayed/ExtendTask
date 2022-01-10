@@ -18,7 +18,6 @@ enum APIError: Error {
 
 protocol NetworkResponserHandlerProtocol {
     func handleDataTaskResponse(data: Data?,urlResponse: URLResponse?, error: Error?,completion: (Result<Any,Error>) -> Void)
-    func handleDownloadTaskResponse(fileUrl: URL?, urlResponse: URLResponse?, error: Error?,completion: (Result<Any,Error>) -> Void)
 }
 
 class NetworkResponseHandler : NetworkResponserHandlerProtocol {
@@ -29,18 +28,7 @@ class NetworkResponseHandler : NetworkResponserHandlerProtocol {
         let result = verifyResponse(withResponse: urlResponse, data: data, error: error)
         switch result {
         case .success(let data):
-            let parseResult = parseDataResponse(data: data as? Data)
-            completion(parseResult)
-        case .failure(let error):
-            completion(.failure(error))
-        }
-    }
-    
-    func handleDownloadTaskResponse(fileUrl: URL?, urlResponse: URLResponse?, error: Error?, completion: (Result<Any, Error>) -> Void) {
-        let result = verifyResponse(withResponse: urlResponse, data: fileUrl, error: error)
-        switch result {
-        case .success(let url):
-            completion(.success(url))
+            completion(.success(data))
         case .failure(let error):
             completion(.failure(error))
         }
@@ -63,18 +51,6 @@ class NetworkResponseHandler : NetworkResponserHandlerProtocol {
             return .failure(APIError.serverError(error?.localizedDescription))
         default:
             return .failure(APIError.unknown)
-        }
-    }
-    
-    private func parseDataResponse(data: Data?) -> Result<Any, Error> {
-        guard let data = data else {
-            return .failure(APIError.invalidResponse)
-        }
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-            return .success(json)
-        } catch (let exception) {
-            return .failure(APIError.parseError(exception.localizedDescription))
         }
     }
 }
