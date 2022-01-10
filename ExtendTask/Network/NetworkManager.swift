@@ -8,6 +8,9 @@
 import Foundation
 
 class NetworkManager {
+    
+    static let shared = NetworkManager()
+    
     func request(withUrl url: URL, completion: @escaping (Result<Any,Error>) -> Void) {
         let session = URLSession.shared
         let task = session.dataTask(with: url) { data, response, error in

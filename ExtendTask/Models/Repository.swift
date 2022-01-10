@@ -16,7 +16,6 @@ class Repository: Codable {
     var image: UIImage?
     let description: String?
     let branchesURL: String
-    let languagesURL: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -27,6 +26,5 @@ class Repository: Codable {
         case owner
         case description
         case branchesURL = "branches_url"
-        case languagesURL = "languages_url"
     }
 }

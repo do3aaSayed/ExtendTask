@@ -17,6 +17,7 @@ class RepositoriesViewController: UIViewController {
     var repositories = [Repository]()
     var filteredRepos = [Repository]()
     var reposViewModel = RepositoryViewModel()
+    var selectedRepo : Repository!
     
     //MARK:- View life cycle
     override func viewDidLoad() {
@@ -38,6 +39,12 @@ class RepositoriesViewController: UIViewController {
             case .failure(error: let error):
                 print(error)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? RepositoryDetailsViewController {
+            controller.selectedRepository = selectedRepo
         }
     }
 }
@@ -75,7 +82,8 @@ extension RepositoriesViewController : UITableViewDelegate , UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedRepo = filteredRepos[indexPath.row]
+        performSegue(withIdentifier: "repoDetailsSeque", sender: self)
     }
     
 }

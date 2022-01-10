@@ -9,21 +9,36 @@ import UIKit
 
 class RepositoryDetailsViewController: UIViewController {
 
+    //MARK:- Outlets
+    @IBOutlet weak var repoNameLabel: UILabel!
+    @IBOutlet weak var repoDescriptionLabel: UILabel!
+    @IBOutlet weak var branchesNamesLabel: UILabel!
+    @IBOutlet weak var ownerAvatarImageView: UIImageView!
+    @IBOutlet weak var ownerNameLabel: UILabel!
+    
+    //MARK:- Variables
+    var selectedRepository : Repository!
+    var repoViewModel : RepositoryDetailsViewModel!
+    
+    //MARK:- View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        repoViewModel = RepositoryDetailsViewModel(repo: selectedRepository)
+        self.title = repoViewModel.fullName
+        setViewValues(repoViewModel: repoViewModel)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK:- Helper funcs
+    func setViewValues(repoViewModel: RepositoryDetailsViewModel) {
+        repoNameLabel.text = repoViewModel.name
+        repoDescriptionLabel.text = repoViewModel.description
+        ownerNameLabel.text = repoViewModel.owner?.login
+        ownerAvatarImageView.image = repoViewModel.image ?? #imageLiteral(resourceName: "github")
+        repoViewModel.getRepoBranches(url: repoViewModel.branchesURL ?? "", completion: { branches in
+            DispatchQueue.main.async {
+                self.branchesNamesLabel.text = branches.compactMap{$0.name}.joined(separator: "\n")
+            }
+        })
     }
-    */
-
 }

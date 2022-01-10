@@ -14,12 +14,11 @@ enum ResponseResult {
 }
 
 class RepositoryViewModel {
-    
-    var networkManager = NetworkManager()
+        
     let decoder = JSONDecoder()
     
     func getAllPublicRepositories(completion: @escaping (ResponseResult) -> Void) {
-        networkManager.request(withUrl: URL(string: Constants.allReposURL)!) { [weak self] result in
+        NetworkManager.shared.request(withUrl: URL(string: Constants.allReposURL)!) { [weak self] result in
             switch result {
             case .success(let data):
                 do {
@@ -38,7 +37,7 @@ class RepositoryViewModel {
     }
     
     func getRepoOwnerImage(url : URL,repo: Repository, completion: @escaping (UIImage?) -> Void) {
-        networkManager.request(withUrl: url) { [weak self] result in
+        NetworkManager.shared.request(withUrl: url) { [weak self] result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
