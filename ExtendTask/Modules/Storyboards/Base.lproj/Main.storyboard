@@ -37,6 +37,10 @@
                             <constraint firstItem="npJ-k9-LMW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yET-mr-wqz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="npJ-k9-LMW" id="epN-IM-xE4"/>
+                        <outlet property="tableView" destination="Qa5-Ew-nXv" id="rvp-ce-F8S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
